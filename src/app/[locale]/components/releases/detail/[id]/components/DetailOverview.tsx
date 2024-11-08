@@ -163,7 +163,6 @@ const DetailOverview = ({ releaseId }: Props) : ReactNode => {
             'AttachmentBundle.zip'
         )
     }
-
     const headerButtons = {
         'Edit release': { link: `/components/editRelease/${releaseId}`, type: 'primary', name: t('Edit release') },
         'Link To Project': {
@@ -176,6 +175,11 @@ const DetailOverview = ({ releaseId }: Props) : ReactNode => {
         },
         Merge: { link: '', type: 'secondary', name: t('Merge') },
         Subscribe: { link: '', type: 'outline-success', name: t('Subscribe') },
+        'Bulk Delete': {
+            link: `/bulkdelete/${releaseId}`,
+            type: 'primary',
+            name: 'Bulk Delete',
+        },
     }
 
     return (

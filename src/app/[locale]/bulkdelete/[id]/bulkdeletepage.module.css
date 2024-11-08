@@ -1,0 +1,41 @@
+.container {
+    padding: 20px;
+  }
+  
+  .tableWrapper {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    background-color: #6699cc;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .bulkDeleteButton {
+    margin-top: 20px;
+    background-color: #f79228;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .bulkDeleteButton:hover {
+    background-color: #e68220;
+  }
+  

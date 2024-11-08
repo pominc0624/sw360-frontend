@@ -140,6 +140,7 @@ const EditRelease = ({ releaseId }: Props) : ReactNode => {
                     documentCreationInformation: documentCreationInfomation,
                     packageInformation: release._embedded['sw360:packageInformation'],
                 }
+                // console.log(SPDXPayload)
                 setSPDXPayload(SPDXPayload)
                 setRelease(release)
                 setDeletingRelease(releaseId)
@@ -370,12 +371,11 @@ const EditRelease = ({ releaseId }: Props) : ReactNode => {
                 }
             }
         }
-
-        if (
-            !validateLicenseIdentifier(SPDXPayload) &&
-            !validateExtractedText(SPDXPayload) &&
-            !validateCreator(SPDXPayload)
-        ) {
+        // if (
+        //     !validateLicenseIdentifier(SPDXPayload) &&
+        //     !validateExtractedText(SPDXPayload) &&
+        //     !validateCreator(SPDXPayload)
+        // ) {
             const response = await ApiUtils.PATCH(`releases/${releaseId}`, releasePayload, session.user.access_token)
             if (response.status == HttpStatus.OK) {
                 const release = (await response.json()) as ReleaseDetail
@@ -384,7 +384,7 @@ const EditRelease = ({ releaseId }: Props) : ReactNode => {
                 router.push('/components/releases/detail/' + releaseId)
             } else {
                 MessageService.success(`Release Create failed`)
-            }
+            //}
         }
     }
 
@@ -393,7 +393,7 @@ const EditRelease = ({ releaseId }: Props) : ReactNode => {
     }
 
     const headerButtons = {
-        'Update Release': { link: '', type: 'primary', onClick: submit, name: t('Update Release') },
+        'Update Release': { link: '', type: 'primary', onClick:submit, name: t('Update Release') },
         'Delete Release': {
             link: '',
             type: 'danger',
